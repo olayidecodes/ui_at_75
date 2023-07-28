@@ -2,7 +2,9 @@ import React from 'react'
 
 const MainModal = () => {
   return (
-    <div>MainModal</div>
+    <div>
+        
+    </div>
   )
 }
 
