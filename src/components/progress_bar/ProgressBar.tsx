@@ -6,7 +6,7 @@ import ReactProgressBar from "@ramonak/react-progress-bar";
 const ProgressBar = () => {
   return (
     <div className={styles.progress_bar}>
-        <h1>Overall amount realized so far</h1>
+        <h2>Overall amount realized so far</h2>
         <ReactProgressBar completed={180} maxCompleted={200} />
         <div className={styles.amount}>
           <p>Total amount realized so far:</p>

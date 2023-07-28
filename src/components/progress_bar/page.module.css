@@ -10,6 +10,12 @@
     padding: 1.5rem 3%;
 }
 
+.progress_bar h2 {
+    font-size: 2rem;
+    line-height: 1.5rem;
+    margin-bottom: 5px;
+}
+
 .progress_bar .amount {
     display: flex;
     gap: .7rem;
