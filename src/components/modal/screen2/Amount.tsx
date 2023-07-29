@@ -43,7 +43,7 @@ const Amount = () => {
               <button 
               type='submit' 
               className={style.previous} 
-              // onClick={() => onButtonClick("pagetwo")}
+              // onClick={() => onButtonClick("pagethree")}
               >
               Previous
             </button>
