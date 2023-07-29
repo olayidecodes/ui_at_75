@@ -5,6 +5,7 @@ import BarChart from '@/components/bar_chart/BarChart'
 import ProgressBar from '@/components/progress_bar/ProgressBar'
 import Gallery from '@/components/gallery/Gallery'
 
+
 export default function Home() {
   return (
     <main className={styles.main}>
