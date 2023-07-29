@@ -4,6 +4,7 @@ import Banner from '@/components/banner/Banner'
 import BarChart from '@/components/bar_chart/BarChart'
 import ProgressBar from '@/components/progress_bar/ProgressBar'
 
+
 export default function Home() {
   return (
     <main className={styles.main}>
