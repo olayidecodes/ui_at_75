@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={open_sans.className}>
         <div className="container">
+          <Navbar />
           {children}
           <PersonalDetails/>
           <Amount/>

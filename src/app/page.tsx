@@ -14,8 +14,8 @@ export default function Home() {
         <h1>Progress made so far</h1>
         <BarChart />
         <ProgressBar />
-        <Gallery />
       </section>
+      <Gallery />
     </main>
   )
 }
