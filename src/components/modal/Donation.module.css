@@ -1,17 +1,54 @@
 .main{
     background: #fff;
-    width: 700px;
+    width: 600px;
     height: 550px;
     border: none;
     border-radius: 2rem;
-    padding: 5rem;
+    padding: 1rem 5rem;
     margin-inline: auto;
+    position: relative;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textwhite{
+    width: 35px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: white;
+    border-radius: 9999px;
+
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background{
+    background-color: #3b82f6;
+    border: 2px solid #000;
+    -webkit-box-shadow: inset 0 0 6px #fff; 
+    box-shadow: inset 0 0 1px 2px #fff; 
+}
+
+.backgroundLight{
+    background-color: none;
+    border: 2px solid #000;
+}
+
+.bar{
+    width: 85px;
+    height: 2px;
 }
 
 .scroll{
-    border: 2px solid black;
+    border: 2px solid rgb(97, 57, 57);
     width: 100%;
-    height: 100%;
+    height: 70%;
     border: none;
     overflow-y: scroll;
 }
@@ -40,36 +77,6 @@
     margin-right: 5rem;
 }
 
-.method{
-    margin-top: 2rem;
-}
-
-.method .icons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 280px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
-
-.icon{
-    border: 2px solid #000;
-    color: #000;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2rem 1rem;
-    font-size: 14px;
-}
-
-/* .method .icon:nth-child(1){
-    border: 2px solid #234CEB;
-    color: #234CEB;
-} */
-
 .field{
     display: flex;
     flex-direction: column;
@@ -81,31 +88,6 @@
     background-color: transparent;
     border-radius: 0.3rem;
     color: #000;
-}
-
-.naira .input{
-    border-left: none;
-    border-radius: 0 0.3rem 0.3rem 0;
-}
-
-.naira{
-    display: flex;
-}
-
-.nairalogo{
-    background: #BFB6B6;
-    padding: 1rem;
-    border: 2px solid black;
-    border-right: none;
-    border-radius: 0.3rem 0 0 0.3rem;
-
-}
-
-.fields{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:1rem 0;
 }
 
 .btn{
@@ -120,3 +102,16 @@
     font-size: 20px;
 }
 
+.title{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 5rem;
+    position: absolute;
+    top: 6.5rem;
+    left: 6rem;
+    font-size: 14px; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

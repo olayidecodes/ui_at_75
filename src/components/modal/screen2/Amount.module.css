@@ -1,11 +1,20 @@
-.main{
-    background: #fff;
-    width: 700px;
-    height: 550px;
+.scrollNot{
+    border: 2px solid rgb(97, 57, 57);
+    width: 100%;
+    height: 70%;
     border: none;
-    border-radius: 2rem;
-    padding: 5rem;
-    margin-inline: auto;
+    overflow: hidden;
+}
+
+.fields{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.fields .field1 .input{
+    width: 180px;
 }
 
 .field1{
@@ -34,17 +43,10 @@
 .nairalogo{
     background: #BFB6B6;
     padding: 1rem;
-    border: 2nextpx solid black;
+    border: 2px solid black;
     border-right: none;
     border-radius: 0.3rem 0 0 0.3rem;
 
-}
-
-.fields{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:1rem 0;
 }
 
 

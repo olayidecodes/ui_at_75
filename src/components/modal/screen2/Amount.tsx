@@ -1,13 +1,12 @@
 import React from 'react';
 import style from "./Amount.module.css"
 
-const Amount = () => {
+const Amount = (props: any) => {
   return (
-    <main className={style.main}>
-      <form className={style.form}>
+      <div className={style.form}>
         <div className={style.field1}>
           <label htmlFor="purpose">Purpose of payment</label>
-          <input className={style.input} type="text" name='purpose' />
+          <input onChange={props.inputHandle} className={style.input} type="text" name='pop' />
         </div>
 
         <div className={style.fields}>
@@ -15,12 +14,12 @@ const Amount = () => {
             <label htmlFor="purpose">Amount to pay</label>
             <div className={style.naira}>
               <span className={style.nairalogo}>&#8358;</span>
-              <input className={style.input} type="text" name='purpose' />
+              <input onChange={props.inputHandle} className={style.input} type="text" name='AmountToPay' />
             </div>
           </div>
           <div className={style.field1}>
             <label htmlFor="purpose">Select Currency</label>
-            <select className={style.input}>
+            <select onChange={props.inputHandle} className={style.input} name='Currency'>
               <option>NGN - Nigerian Naira</option>
               <option>CAD - Canidian Dollar</option>
               <option>USD - United State Dollar</option>
@@ -35,7 +34,7 @@ const Amount = () => {
             <button 
               type='submit' 
               className={style.next} 
-              // onClick={() => onButtonClick("pageone")}
+              onClick={props.next}
               >
                 Next
               </button>
@@ -43,13 +42,12 @@ const Amount = () => {
               <button 
               type='submit' 
               className={style.previous} 
-              // onClick={() => onButtonClick("pagetwo")}
+              onClick={props.pre}
               >
               Previous
             </button>
-          </div>
-      </form>
-    </main>
+        </div>
+      </div>
   )
 }
 
