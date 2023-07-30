@@ -3,10 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Open_Sans } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
-// import PersonalDetails from '@/components/modal/screen1/PersonalDetails'
-// import Amount from '@/components/modal/screen2/Amount'
-// import PaymentMethod from '@/components/modal/screen3/PaymentMethod'
-import Donation from '@/components/modal/Donation'
+
 
 const inter = Inter({ subsets: ['latin'] })
 const open_sans = Open_Sans({ subsets: ['latin'] })
@@ -26,10 +23,6 @@ export default function RootLayout({
       <body className={open_sans.className}>
         <div className="container">
           {children}
-          {/* <PersonalDetails/> */}
-          {/* <Amount/> */}
-          {/* <PaymentMethod/> */}
-          <Donation/>
           <Footer />
         </div>
       </body>
