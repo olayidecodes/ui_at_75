@@ -3,10 +3,8 @@ import {FaMoneyBillTransfer} from "react-icons/fa6";
 import style from "./Payment.module.css";
 import React from 'react';
 
-const PaymentMethod = () => {
+const PaymentMethod = (props: any) => {
   return (
-    <main className={style.main}>
-      <div className={style.scroll}>
         <form className={style.form}>
 
           <h2>Payment Method</h2>
@@ -31,40 +29,38 @@ const PaymentMethod = () => {
           </div>
           <div className={style.field}>
             <label className='label' htmlFor="cname">Card Name</label>
-            <input className={style.input} type='text'name='cname'/>
+            <input onChange={props.inputHandle} className={style.input} type='text'name='cname'/>
           </div>
 
           <div className={style.field}>
             <label className='label' htmlFor="cnumber">Card Number</label>
-            <input className={style.input} type='text'name='cnumber'/>
+            <input onChange={props.inputHandle} className={style.input} type='text'name='cnumber'/>
           </div>
 
           <div className={style.fields}>
             <div className={style.field}>
               <label htmlFor="purpose">Expiration Date</label>
-              <input className={style.input} type="date" name='purpose' />
+              <input onChange={props.inputHandle} className={style.input} type="date" name='purpose' />
             </div>
             <div className={style.field}>
               <label htmlFor="purpose">CVV</label>
-              <input className={style.input} type="text" name='cvv' />
+              <input onChange={props.inputHandle} className={style.input} type="text" name='cvv' />
             </div>
           </div>
 
           <div className={style.field}>
             <label className='label' htmlFor="address">Home Address</label>
-            <input className={style.input} type='text'name='address'/>
+            <input onChange={props.inputHandle} className={style.input} type='text'name='address'/>
           </div>
 
           <button 
             type='submit' 
             className={style.btn} 
-            // onClick={() => onButtonClick("pagetwo")}
+            onClick={props.next}
             >
               Next
             </button>
         </form>
-      </div>
-    </main>
   )
 }
 
