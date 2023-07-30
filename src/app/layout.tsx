@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter, Open_Sans } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 
+
 const inter = Inter({ subsets: ['latin'] })
 const open_sans = Open_Sans({ subsets: ['latin'] })
 
@@ -21,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={open_sans.className}>
         <div className="container">
-          <Navbar />
           {children}
           <Footer />
         </div>
