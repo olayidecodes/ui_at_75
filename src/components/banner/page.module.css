@@ -22,7 +22,7 @@
     font-size: 1.2rem;
 }
 
-.left button {
+.left .btn {
     width: max-content;
     font-size: 1rem;
     letter-spacing: .5px;
