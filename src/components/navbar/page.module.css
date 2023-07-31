@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.menu {
+    display: none;
+}
+ 
 .links {
     display: flex;
     align-items: center;
@@ -36,4 +40,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .small_links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background-color: var(--color-white);
+    transition: 0.5s ease;
+    flex-direction: column;
+    z-index: 5;
+  }
+
+  .close {
+    color: var(--color-golden);
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .links_box {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .links {
+        display: none;
+    }
+
+    
   }

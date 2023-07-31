@@ -22,7 +22,7 @@ const Banner = () => {
             {showPopup && <Popup/>}
         </div>
         <div className={styles.right}>
-          <Image src='/money.png' alt='money' width={450} height={500}/>
+          <Image src='/money.png' alt='money' width={450} height={500} className={styles.image}/>
         </div>
     </section>
   )

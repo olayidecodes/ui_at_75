@@ -2,16 +2,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    gap: .7rem;
     border-radius: 45.818px;
     background: linear-gradient(175deg, #435EEF 0%, rgba(178, 52, 255, 0.90) 100%);
     color: var(--color-white);
     text-align: center;
-    padding: 1.5rem 3%;
+    padding: 1.5rem 5%;
 }
 
 .progress_bar h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.5rem;
     margin-bottom: 5px;
 }
@@ -21,4 +21,10 @@
     gap: .7rem;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 600rem) {
+    .progress_bar h2 {
+        font-size: 1.6rem;
+    }
 }
