@@ -16,9 +16,6 @@ const Navbar = () => {
     setShowPopup(true);
   };
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
   
   return (
     <nav className={styles.container}>
@@ -27,7 +24,7 @@ const Navbar = () => {
             <Link className={styles.link} href="/about">About Project</Link>
             <Link className={styles.link} href="/contact">Contact Us</Link>
             <Link onClick={handleButtonClick} className={styles.link_other} href="">Donate</Link>
-            {showPopup && <Popup/>}
+            {showPopup && <Popup />}
         </div>
         <AiOutlineMenu className={styles.menu} onClick={() => setToggle(!toggle)}/>
 

@@ -20,6 +20,7 @@ const Amount = (props: any) => {
           <div className={style.field1}>
             <label htmlFor="purpose">Select Currency</label>
             <select onChange={props.inputHandle} className={style.input} name='Currency'>
+              <option>SELECT CURRENCY</option>
               <option>NGN - Nigerian Naira</option>
               <option>CAD - Canidian Dollar</option>
               <option>USD - United State Dollar</option>

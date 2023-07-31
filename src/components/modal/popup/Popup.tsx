@@ -2,6 +2,7 @@
 import style from "./Popup.module.css";
 import React, {useState} from "react";
 import Donation from "../Donation";
+import cx from "classnames";
 // import { FaTimes } from "react-icons/fa";
 
 
@@ -11,6 +12,7 @@ const Popup: any = () => {
     const onClose = () => {
         setShowModal(!showModal);
     }
+
 
     if(showModal){
         return(
@@ -25,9 +27,7 @@ const Popup: any = () => {
             </div>
         )
     }else{
-        return(
-            location.reload()
-        )
+       location.reload();
     }
 }
 

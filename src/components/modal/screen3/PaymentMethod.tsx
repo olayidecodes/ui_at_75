@@ -23,7 +23,7 @@ const PaymentMethod = (props: any) => {
               </div>
               <div className={style.icon}>
                 <FaMoneyBillTransfer size={40}/>
-                <p>Transfer</p>
+                <p className={style.para}>Transfer</p>
               </div>
             </div>
           </div>
