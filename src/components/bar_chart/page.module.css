@@ -141,3 +141,29 @@
 .namebox p {
     font-size: .7rem;
 }
+
+@media screen and (max-width: 670px){
+    .bottom {
+        display: flex;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .bar_chart {
+        border-radius: 30px;
+    }
+    .bar_chart .text h1 {
+        font-size: 1.7rem;
+        line-height: 1.5rem;
+        margin-bottom: 0;
+    }
+    
+    .bar_chart .text p {
+        font-size: 1rem;
+    }
+    
+    .bar_chart .text hr {
+        width: 100%;
+    }
+}

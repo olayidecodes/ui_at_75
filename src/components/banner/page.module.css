@@ -36,3 +36,35 @@
 .right {
     flex: 2;
 }
+
+@media screen and (max-width: 1000px) {
+    .left h1 {
+        font-size: 2.4rem;
+        line-height: 2.7rem;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .right .image {
+        width: 18rem;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .left h1 {
+        font-size: 2.0rem;
+        line-height: 2.3rem;
+    }
+    .right .image {
+        width: 18rem;
+        height: 20rem;
+    }
+}
