@@ -65,3 +65,24 @@
     font-size: 20px;
 }
 
+@media screen and (max-width: 650px) {
+    .main{
+        width: 95%;
+        padding: 1rem 2rem;
+    }
+
+    .textwhite{
+        width: 35px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .scroll{
+        margin: 3rem 0;
+    }
+
+    .form{
+        margin-right: 2rem;
+    }
+}
+
