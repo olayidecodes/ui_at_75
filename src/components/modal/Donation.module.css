@@ -29,7 +29,7 @@
 }
 
 .background{
-    background-color: #3b82f6;
+    background-color: #000;
     border: 2px solid #000;
     -webkit-box-shadow: inset 0 0 6px #fff; 
     box-shadow: inset 0 0 1px 2px #fff; 
@@ -46,7 +46,6 @@
 }
 
 .scroll{
-    border: 2px solid rgb(97, 57, 57);
     width: 100%;
     height: 70%;
     border: none;
@@ -114,4 +113,32 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 650px) {
+    .main{
+        width: 95%;
+        padding: 1rem 2rem;
+    }
+
+    .textwhite{
+        width: 35px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .scroll{
+        margin: 3rem 0;
+    }
+    
+    .form{
+        margin-right: none;
+    }
+
+    .title{
+        top: 5.5rem;
+        left: 2rem;
+        width: 80%;
+        grid-gap: 3.5rem;
+    }
 }

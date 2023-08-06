@@ -4,6 +4,7 @@ import style from "./Payment.module.css";
 import React from 'react';
 
 const PaymentMethod = (props: any) => {
+
   return (
         <form className={style.form}>
 
@@ -23,43 +24,54 @@ const PaymentMethod = (props: any) => {
               </div>
               <div className={style.icon}>
                 <FaMoneyBillTransfer size={40}/>
-                <p>Transfer</p>
+                <p className={style.para}>Transfer</p>
               </div>
             </div>
           </div>
           <div className={style.field}>
             <label className='label' htmlFor="cname">Card Name</label>
-            <input onChange={props.inputHandle} className={style.input} type='text'name='cname'/>
+            <input value={props.formData.cardName} onChange={props.inputHandle} className={style.input} type='text'name='CardName'/>
+            <input />
           </div>
 
           <div className={style.field}>
             <label className='label' htmlFor="cnumber">Card Number</label>
-            <input onChange={props.inputHandle} className={style.input} type='text'name='cnumber'/>
+            <input  value={props.formData.cardNumber} onChange={props.inputHandle} className={style.input} type='text'name='CardNumber'/>
           </div>
 
           <div className={style.fields}>
             <div className={style.field}>
               <label htmlFor="purpose">Expiration Date</label>
-              <input onChange={props.inputHandle} className={style.input} type="date" name='purpose' />
+              <input value={props.formData.expiryDate} onChange={props.inputHandle} className={style.input} type="date" name='ExpireDate' />
             </div>
             <div className={style.field}>
               <label htmlFor="purpose">CVV</label>
-              <input onChange={props.inputHandle} className={style.input} type="text" name='cvv' />
+              <input  value={props.formData.cvv} onChange={props.inputHandle} className={style.input} type="text" name='Cvv' />
             </div>
           </div>
 
           <div className={style.field}>
             <label className='label' htmlFor="address">Home Address</label>
-            <input onChange={props.inputHandle} className={style.input} type='text'name='address'/>
+            <input  value={props.formData.homeAddress} onChange={props.inputHandle} className={style.input} type='text'name='homadd'/>
           </div>
+
+          <button 
+              type='submit' 
+              className={style.previous} 
+              onClick={props.pre}
+              >
+              Previous
+            </button>                                 
 
           <button 
             type='submit' 
             className={style.btn} 
-            onClick={props.next}
+            onClick={props.submitHandler}
+
             >
               Next
             </button>
+            
         </form>
   )
 }

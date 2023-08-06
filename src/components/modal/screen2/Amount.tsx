@@ -6,7 +6,7 @@ const Amount = (props: any) => {
       <div className={style.form}>
         <div className={style.field1}>
           <label htmlFor="purpose">Purpose of payment</label>
-          <input onChange={props.inputHandle} className={style.input} type="text" name='pop' />
+          <input  value={props.formData.pop} onChange={props.inputHandle} className={style.input} type="text" name='pop' />
         </div>
 
         <div className={style.fields}>
@@ -14,12 +14,13 @@ const Amount = (props: any) => {
             <label htmlFor="purpose">Amount to pay</label>
             <div className={style.naira}>
               <span className={style.nairalogo}>&#8358;</span>
-              <input onChange={props.inputHandle} className={style.input} type="text" name='AmountToPay' />
+              <input  value={props.formData.amountToPay} onChange={props.inputHandle} className={style.input} type="text" name='AmountToPay' />
             </div>
           </div>
           <div className={style.field1}>
             <label htmlFor="purpose">Select Currency</label>
             <select onChange={props.inputHandle} className={style.input} name='Currency'>
+              <option>SELECT CURRENCY</option>
               <option>NGN - Nigerian Naira</option>
               <option>CAD - Canidian Dollar</option>
               <option>USD - United State Dollar</option>
@@ -38,14 +39,6 @@ const Amount = (props: any) => {
               >
                 Next
               </button>
-
-              <button 
-              type='submit' 
-              className={style.previous} 
-              onClick={props.pre}
-              >
-              Previous
-            </button>
         </div>
       </div>
   )
