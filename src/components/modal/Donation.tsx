@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Amount from './screen2/Amount';
 import PersonalDetails from './screen1/PersonalDetails';
 import PaymentMethod from './screen3/PaymentMethod';
+import { checkout } from '@/lib/api/checkout';
 
 
 const Donation = () => {
@@ -13,25 +14,35 @@ const Donation = () => {
   const formArray = [1, 2, 3];
   const [formNo, setFormNo] = useState(formArray[0]);
   const [state, setState] = useState({
-    FullName: '',
-    HallAllumni: '',
-    Yof: '',
-    HomeAddress: '',
-    pop: '',
+    FirstName: '', 
+    LastName: '', 
+    Email: '', 
+    HallAlumni: '', 
     AmountToPay: '',
-    Currency: '',
-    CardName: '',
-    CardNumber: '',
-    ExpireDate: '',
-    Cvv: '',
-    homadd: ''
+    Narration: ''
   })
+
+  
+  const submitHandler = async () => {
+    const payload = {
+      "firstName": state.FirstName,
+      "lastName": state.LastName,
+      "email": state.Email,
+      "amount": state.AmountToPay,
+      "narration": state.Narration,
+      "hallOfResidence": state.HallAlumni,
+      "transactionID": '',
+    }
+    const data = await checkout(payload)
+    }
 
   // handling/getting the input value here
   const inputHandle = (e: any) => {
+    console.log(e.target.name)
     setState({
       ...state,
       [e.target.name]: e.target.value
+
     })
   }
 
@@ -84,22 +95,34 @@ const Donation = () => {
         </div>
         {/* form loading */}
           {
-            
-
-            formNo === 1 && <div className={style.scroll}>
-                <PersonalDetails inputHandle={inputHandle} next={next}/>
+          formNo === 1 && <div className={style.scroll}>
+                <PersonalDetails inputHandle={inputHandle} next={next} formData = {{
+                  firstName: state.FirstName,
+                  lastName: state.LastName,
+                  email: state.Email,
+                  alumni: state.HallAlumni,
+                }} />
             </div>
           }
 
           {
             formNo === 2 && <div className={style.scrollNot}>
-                <Amount inputHandle={inputHandle} next={next} pre={pre}/>
+                <Amount inputHandle={inputHandle} next={next} pre={pre} formData = {{
+                  pop: state.pop,
+                  amountToPay: state.AmountToPay
+                }} />
             </div>
           }
 
           {
             formNo === 3 && <div className={style.scroll}>
-                <PaymentMethod inputHandle={inputHandle} next={next}/>
+                <PaymentMethod state={state} inputHandle={inputHandle} next={next} pre={pre} formData={{
+                  cardName: state.CardName,
+                  cardNumber: state.CardNumber,
+                  expiryDate: state.ExpireDate,
+                  cvv: state.Cvv,
+                  homeAddress: state.homadd
+                }} />
             </div>
           }
         
