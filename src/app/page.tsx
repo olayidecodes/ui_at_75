@@ -4,6 +4,7 @@ import Banner from '@/components/banner/Banner'
 import BarChart from '@/components/bar_chart/BarChart'
 import ProgressBar from '@/components/progress_bar/ProgressBar'
 import Gallery from '@/components/gallery/Gallery'
+import Guage from '@/components/guage/Guage'
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <section className={`${styles.section} ${styles.charts}`}>
         <h1>Progress made so far</h1>
         <BarChart />
-        <ProgressBar />
+        {/* <ProgressBar /> */}
+        <Guage />
       </section>
       <Gallery />
     </main>
