@@ -5,9 +5,6 @@ import { checkout } from '@/lib/api/checkout';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-
 const PersonalDetails = (props: any) => {
   // initializing the state of all form input.
   const [state, setState] = useState({
