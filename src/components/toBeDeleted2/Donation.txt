@@ -48,7 +48,7 @@ const Donation = () => {
 
   // form validation before the next form
   const next = () => {
-    if (formNo === 1 && state.FullName && state.HallAllumni && state.Yof && state.HomeAddress) {
+    if (formNo === 1 && state.FirstName  && state.HallAlumni && state.Yof && state.HomeAddress) {
       setFormNo(formNo + 1)
     }
     else if (formNo === 2 && state.pop && state.AmountToPay && state.Currency) {

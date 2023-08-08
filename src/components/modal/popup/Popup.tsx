@@ -1,9 +1,8 @@
 "use client";
 import style from "./Popup.module.css";
 import React, {useState} from "react";
-import Donation from "../Donation";
+import PersonalDetails from '../Form/PersonalDetails';
 import cx from "classnames";
-// import { FaTimes } from "react-icons/fa";
 
 
 const Popup: any = () => {
@@ -22,7 +21,7 @@ const Popup: any = () => {
                 </button>
 
                 <div className={style.popupContent}>
-                    <Donation />
+                    <PersonalDetails />
                 </div>
             </div>
         )
