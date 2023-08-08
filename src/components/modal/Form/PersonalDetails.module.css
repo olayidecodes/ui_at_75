@@ -1,43 +1,24 @@
 .main{
     background: #fff;
     width: 700px;
-    height: 550px;
+    height: 700px;
     border: none;
     border-radius: 2rem;
     padding: 5rem;
     margin-inline: auto;
 }
 
-.scroll{
-    border: 2px solid black;
-    width: 100%;
-    height: 100%;
-    border: none;
-    overflow-y: scroll;
-}
-
-.scroll::-webkit-scrollbar {
-    width: 17px;
-}
-  
-.scroll::-webkit-scrollbar-track {
-    background: #BFB6B6;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
-}
-  
-.scroll::-webkit-scrollbar-thumb {
-    background: #fff;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 3px solid #BFB6B6;
-    height: 10px;
+.title{
+    margin-left: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .form{
-    margin-right: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
 }
 
 .field{
@@ -50,6 +31,12 @@
     padding: 1rem;
     background-color: transparent;
     border-radius: 0.3rem;
+    color: #000;
+}
+
+.Narration{
+    background: transparent;
+    border: 2px solid #000;
     color: #000;
 }
 
@@ -76,13 +63,4 @@
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
-    
-    .scroll{
-        margin: 3rem 0;
-    }
-
-    .form{
-        margin-right: 2rem;
-    }
 }
-
