@@ -4,6 +4,7 @@ import style from  "./PersonalDetails.module.css";
 import { checkout } from '@/lib/api/checkout';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/navigation'
 
 const PersonalDetails = (props: any) => {
   // initializing the state of all form input.
@@ -16,9 +17,13 @@ const PersonalDetails = (props: any) => {
     Narration: ''
   })
 
+  const [ isLoading, setIsLoading ] = useState<boolean>(false)
+  const router = useRouter()
+
   // onSubmit function
   const submitHandler = async () => {
     // form validation before the next form
+    setIsLoading(true)
       if (state.FirstName && state.LastName && state.Email && state.AmountToPay && state.HallAlumni && state.Narration !== "") {
         const payload = {
           "firstName": state.FirstName,
@@ -30,10 +35,13 @@ const PersonalDetails = (props: any) => {
           "transactionID": '',
         }
         const data = await checkout(payload)
+        router.push(data.data.data.authorization_url)
+        console.log(data)
 
       } else {
         toast.error('Please fillup all input field')
       }
+  
     }
 
   // handling/getting the input value here
@@ -82,7 +90,7 @@ const inputHandle = (e: any) => {
                   <textarea className={style.Narration} value={state.Narration} onChange={inputHandle} name="Narration" id="Narration" cols={30} rows={10} />
                 </div>
 
-                <button type='submit' className={style.btn} onClick={submitHandler}>Pay</button>
+                <button type='submit' className={style.btn} onClick={submitHandler} disabled={isLoading}>{ isLoading? "Processing..." : "Pay"}</button>
           </div>
       </div>
   )
