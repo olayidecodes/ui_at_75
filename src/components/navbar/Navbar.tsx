@@ -8,13 +8,19 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 
 
 const Navbar = () => {
-  const [showPopup, setShowPopup] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-
-  const handleButtonClick = () => {
-    setShowPopup(true);
+  const openPopup = () => {
+    setIsPopupOpen(true);
   };
+
+
+  const closePopup = () => {
+    console.log("clicked")
+    setIsPopupOpen(false);
+  };
+
 
   
   return (
@@ -23,8 +29,9 @@ const Navbar = () => {
         <div className={styles.links}>
             <Link className={styles.link} href="/about">About Project</Link>
             <Link className={styles.link} href="/contact">Contact Us</Link>
-            <Link onClick={handleButtonClick} className={styles.link_other} href="">Donate</Link>
-            {showPopup && <Popup />}
+            <Link onClick={openPopup} className={styles.link_other} href="">Donate</Link>
+            {isPopupOpen && <Popup onClose={closePopup}/>}
+            
         </div>
         <AiOutlineMenu className={styles.menu} onClick={() => setToggle(!toggle)}/>
 
@@ -34,8 +41,9 @@ const Navbar = () => {
         <div className={styles.links_box}>
         <Link className={styles.link} href="/about">About Project</Link>
         <Link className={styles.link} href="/contact">Contact Us</Link>
-        <Link onClick={handleButtonClick} className={styles.link_other} href="">Donate</Link>
-        {showPopup && <Popup/>}
+        <Link onClick={openPopup} className={styles.link_other} href="">Donate</Link>
+        {isPopupOpen && <Popup onClose={closePopup}/>}
+        
         </div>
     </div>
         }

@@ -4,6 +4,7 @@ import JqxGauge from 'jqwidgets-scripts/jqwidgets-react-tsx/jqxgauge';
 import JqxSlider from 'jqwidgets-scripts/jqwidgets-react-tsx/jqxslider';
 import styles from './style.module.css'
 
+
 function Guage() {
     const myGauge = useRef();
     const mySlider = useRef();

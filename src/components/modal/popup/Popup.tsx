@@ -4,30 +4,23 @@ import React, {useState} from "react";
 import PersonalDetails from '../Form/PersonalDetails';
 import cx from "classnames";
 
+interface PopupProps {
+    onClose: () => void;
+  }
 
-const Popup: any = () => {
-    const [showModal, setShowModal] = useState(true);
+const Popup: React.FC<PopupProps> = ({onClose}) => {
 
-    const onClose = () => {
-        setShowModal(!showModal);
-    }
+    return(
+        <div className={style.popup}>
+            <button className={style.closeIcon} onClick={onClose}>
+                &#x2715;
+            </button>
 
-
-    if(showModal){
-        return(
-            <div className={style.popup}>
-                <button className={style.closeIcon} onClick={onClose}>
-                    &#x2715;
-                </button>
-
-                <div className={style.popupContent}>
-                    <PersonalDetails />
-                </div>
+            <div className={style.popupContent}>
+                <PersonalDetails />
             </div>
-        )
-    }else{
-       location.reload();
-    }
+        </div>
+    )
 }
 
 export default Popup

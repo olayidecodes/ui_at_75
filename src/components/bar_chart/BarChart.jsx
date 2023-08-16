@@ -50,7 +50,7 @@ const items = [
 	{
 		id: 9,
 		color: "lightgreen",
-		name: "Awolowo all"
+		name: "Awolowo hall"
 	},
 	{
 		id: 10,
