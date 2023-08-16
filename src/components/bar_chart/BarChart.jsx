@@ -3,6 +3,8 @@ import React from 'react'
 import styles from './page.module.css'
 import { Bar } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
+import { useEffect } from 'react'
+import { getCheckouts } from '../../lib/api/checkout'
 
 const items = [
 	{
@@ -66,7 +68,17 @@ const NameBox = ({item: {color, name}}) => {
 	)
 }
 
+
 function BarChart() {
+
+	const getCheckoutData = async () => {
+        const data = await getCheckouts()
+		console.log(data)
+	}
+
+	useEffect(() => {
+		getCheckoutData()
+	}, [])
 return (
 	<div className={styles.bar_chart}>
 	<div className={styles.text}>
