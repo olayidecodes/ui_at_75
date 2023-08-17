@@ -4,7 +4,7 @@ import Banner from '@/components/banner/Banner'
 import BarChart from '@/components/bar_chart/BarChart'
 import ProgressBar from '@/components/progress_bar/ProgressBar'
 import Gallery from '@/components/gallery/Gallery'
-import Guage from '@/components/guage/Guage'
+import GuageChart from '@/components/guage_chart/GuageChart'
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <h1>Progress made so far</h1>
         <BarChart />
         {/* <ProgressBar /> */}
-        <Guage />
+        <GuageChart />
       </section>
       <Gallery />
     </main>

@@ -2,9 +2,16 @@
 import React from 'react'
 import styles from './page.module.css'
 import { Bar } from "react-chartjs-2";
-import Chart from 'chart.js/auto';
 import { useEffect } from 'react'
 import { getCheckouts } from '../../lib/api/checkout'
+import { CategoryScale, Chart, BarElement, Tooltip, Legend, LinearScale } from "chart.js";
+
+Chart.register(CategoryScale, BarElement, Tooltip, Legend, LinearScale);
+
+interface NameBoxTypes {
+	color: string;
+	name: string;
+}
 
 const items = [
 	{
@@ -59,7 +66,7 @@ const items = [
 	},
 ]
 
-const NameBox = ({item: {color, name}}) => {
+const NameBox: React.FC<{ item: NameBoxTypes }> = ({ item: { color, name } }) => {
 	return (
 		<div className={styles.namebox}>
 			<span className={styles[`${color}`]}></span>
@@ -73,7 +80,7 @@ function BarChart() {
 
 	const getCheckoutData = async () => {
         const data = await getCheckouts()
-		console.log(data)
+		// console.log(data)
 	}
 
 	useEffect(() => {

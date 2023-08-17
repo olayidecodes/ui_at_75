@@ -1,0 +1,29 @@
+.guage_chart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_guage {
+    width: 70%;
+}
+
+.guage {
+    
+}
+
+.text {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    gap: .6rem;
+    justify-content: center;
+}
+
+.text h3 {
+    font-size: 150%;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
