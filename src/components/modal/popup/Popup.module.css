@@ -9,14 +9,14 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
-}
-
-.close{
-  display: none;
+    padding: 10rem;
 }
 
 .popupContent {
-  position: relative; /* Ensure relative positioning for the absolute button */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .closeIcon {
@@ -28,16 +28,12 @@
   border: none;
   font-size: 35px;
   color: #ffffff;
+
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 620px) {
   .closeIcon{
-    right: 1rem;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .popupContent {
-    width: 95%; /* Ensure relative positioning for the absolute button */
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

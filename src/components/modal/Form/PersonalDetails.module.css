@@ -1,19 +1,23 @@
 .main{
     background: #fff;
-    width: 700px;
+    padding: 2rem;
     height: 700px;
-    border: none;
-    border-radius: 2rem;
-    padding: 5rem;
-    margin-inline: auto;
-}
-
-.title{
-    margin-left: 2.5rem;
-    margin-bottom: 2rem;
 }
 
 .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.title{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: left;
+}
+
+.form1{
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: center;
@@ -54,33 +58,14 @@
     border: none;
     cursor: pointer;
     font-size: 20px;
+    margin-top: 2rem;
 }
 
-@media screen and (max-width: 1000px) {
-    /* .main{
-        width: 100%;
-        height: 40rem;
+@media screen and (max-width: 620px) {
+    .main{
         overflow: scroll;
-    } */
-
-    .form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: start;
     }
-}
-
-@media screen and (max-width: 650px) {
-    /* .main{
-        width: 100%;
-        padding: 1rem 2rem;
-    } */
-
-    .textwhite{
-        width: 35px;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+    .form1{
+        grid-template-columns: repeat(1, auto);
     }
 }

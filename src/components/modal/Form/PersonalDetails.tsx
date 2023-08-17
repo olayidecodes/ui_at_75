@@ -62,49 +62,52 @@ const inputHandle = (e: any) => {
   return (
     <div className={style.main}>
       <ToastContainer />
-      <h1 className={style.title}>Personal Details</h1>
+      
         <div className={style.form}>
-                <div className={style.field}>
-                  <label className='label' htmlFor="fname">First Name</label>
-                  <input value={state.FirstName} onChange={inputHandle} className={style.input} type='text' name='FirstName'/>
-                </div>
+          <h1 className={style.title}>Personal Details</h1>
+                <div className={style.form1}>
+                  <div className={style.field}>
+                    <label className='label' htmlFor="fname">First Name</label>
+                    <input value={state.FirstName} onChange={inputHandle} className={style.input} type='text' name='FirstName'/>
+                  </div>
 
-                <div className={style.field}>
-                  <label className='label' htmlFor="fname">Last Name</label>
-                  <input value={state.LastName} onChange={inputHandle} className={style.input} type='text' name='LastName'/>
-                </div>
+                  <div className={style.field}>
+                    <label className='label' htmlFor="fname">Last Name</label>
+                    <input value={state.LastName} onChange={inputHandle} className={style.input} type='text' name='LastName'/>
+                  </div>
 
-                <div className={style.field}>
-                  <label className='label' htmlFor="fname">Email</label>
-                  <input value={state.Email} onChange={inputHandle} className={style.input} type='email' name='Email'/>
-                </div>
+                  <div className={style.field}>
+                    <label className='label' htmlFor="fname">Email</label>
+                    <input value={state.Email} onChange={inputHandle} className={style.input} type='email' name='Email'/>
+                  </div>
 
-                <div className={style.field}>
-                  <label className='label' htmlFor="amount">Amount (&#8358;)</label>
-                  <input value={state.AmountToPay} onChange={inputHandle} className={style.input} type='number' name='AmountToPay'/>
-                </div>
+                  <div className={style.field}>
+                    <label className='label' htmlFor="amount">Amount (&#8358;)</label>
+                    <input value={state.AmountToPay} onChange={inputHandle} className={style.input} type='number' name='AmountToPay'/>
+                  </div>
 
-                <div className={style.field}>
-                  <label className='label' htmlFor="narration">Narration</label>
-                  <textarea className={style.Narration} value={state.Narration} onChange={inputHandle} name="Narration" id="Narration" cols={30} placeholder='Type Here...' rows={10} />
-                </div>
+                  <div className={style.field}>
+                    <label className='label' htmlFor="narration">Narration</label>
+                    <textarea className={style.Narration} value={state.Narration} onChange={inputHandle} name="Narration" id="Narration" cols={30} placeholder='Type Here...' rows={10} />
+                  </div>
 
-                <div className={style.field}>
-                  <label className='label' htmlFor="hallAllumni">Allumni Hall</label>
-                  <select className={style.select} onChange={inputHandle} name="HallAlumni" id="HallAlumni">
-                    <option value="#">Select your Hall</option>
-                    <option value="Alexander brown hall">Alexander Brown Hall</option>
-                    <option value="Kuti Hall">Kuti Hall</option>
-                    <option value="Tedder Hall">Tedder Hall</option>
-                    <option value="Mellanby Hall">Mellanby Hall</option>
-                    <option value="Queen Elizabeth Hall">Queen Elizabeth Hall</option>
-                    <option value="Independence Hall">Independence Hall</option>
-                    <option value="Idia Hall">Idia Hall</option>
-                    <option value="Bello Hall">Bello Hall</option>
-                    <option value="Awolowo Hall">Awolowo Hall</option>
-                    <option value="Nnamdi Azikwe Hall">Nnamdi Azikwe Hall</option>
-                  </select>
-                </div> 
+                  <div className={style.field}>
+                    <label className='label' htmlFor="hallAllumni">Allumni Hall</label>
+                    <select className={style.select} onChange={inputHandle} name="HallAlumni" id="HallAlumni">
+                      <option value="#">Select your Hall</option>
+                      <option value="Alexander brown hall">Alexander Brown Hall</option>
+                      <option value="Kuti Hall">Kuti Hall</option>
+                      <option value="Tedder Hall">Tedder Hall</option>
+                      <option value="Mellanby Hall">Mellanby Hall</option>
+                      <option value="Queen Elizabeth Hall">Queen Elizabeth Hall</option>
+                      <option value="Independence Hall">Independence Hall</option>
+                      <option value="Idia Hall">Idia Hall</option>
+                      <option value="Bello Hall">Bello Hall</option>
+                      <option value="Awolowo Hall">Awolowo Hall</option>
+                      <option value="Nnamdi Azikwe Hall">Nnamdi Azikwe Hall</option>
+                    </select>
+                  </div> 
+                </div>
 
                 <button type='submit' className={style.btn} onClick={submitHandler} disabled={isLoading}>{ isLoading? "Processing..." : "Pay"}</button>
           </div>
