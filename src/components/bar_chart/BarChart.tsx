@@ -5,6 +5,8 @@ import { Bar } from "react-chartjs-2";
 import { useEffect } from 'react'
 import { getCheckouts } from '../../lib/api/checkout'
 import { CategoryScale, Chart, BarElement, Tooltip, Legend, LinearScale } from "chart.js";
+import myData from '../guage_chart/test_data';
+
 
 Chart.register(CategoryScale, BarElement, Tooltip, Legend, LinearScale);
 
@@ -12,6 +14,37 @@ interface NameBoxTypes {
 	color: string;
 	name: string;
 }
+
+// interface DataItem {
+// 	hallName: string;
+// 	data: {
+// 	  firstName: string;
+// 	  lastName: string;
+// 	  email: string;
+// 	  amount: number;
+// 	  narration: string;
+// 	  transactionID: string;
+// 	  status: string;
+// 	  date: string;
+// 	}[];
+//   }
+
+interface Payer {
+	firstName: string;
+	lastName: string;
+	email: string;
+	amount: number;
+	narration: string;
+	transactionID: string;
+	status: string;
+	date: string;
+  }
+  
+  interface Hall {
+	hallName: string;
+	data: Payer[];
+  }
+  
 
 const items = [
 	{
@@ -86,6 +119,40 @@ function BarChart() {
 	useEffect(() => {
 		getCheckoutData()
 	}, [])
+
+
+
+	// // Function to filter data by hallName
+	// function filterDataByHallName(data: DataItem[], hallName: string): DataItem[] {
+	// 	return data.filter(item => item.hallName === hallName);
+	//   }
+	  
+	//   // Example usage
+	//   const filteredData = filterDataByHallName(myData, "Idia");
+	//   console.log(filteredData);
+
+ // Replace with the actual path to your data file
+
+ function calculateTotalPaymentsByHall(data: Hall[]): Record<string, number> {
+	const hallTotals: Record<string, number> = {};
+  
+	data.forEach(hall => {
+	  const hallName = hall.hallName;
+	  hall.data.forEach(payer => {
+		if (!hallTotals[hallName]) {
+		  hallTotals[hallName] = 0;
+		}
+		hallTotals[hallName] += payer.amount;
+	  });
+	});
+  
+	return hallTotals;
+  }
+  
+  const totalPaymentsByHall = calculateTotalPaymentsByHall(myData);
+  console.log(totalPaymentsByHall);
+
+
 return (
 	<div className={styles.bar_chart}>
 	<div className={styles.text}>

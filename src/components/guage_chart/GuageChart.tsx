@@ -7,23 +7,66 @@ import React, { useEffect, useState } from 'react';
 import styles from './page.module.css'
 import myData from './test_data';
 
+interface Transaction {
+  firstName: string;
+  lastName: string;
+  email: string;
+  amount: number;
+  narration: string;
+  transactionID: string;
+  status: string;
+  date: string;
+}
+
+interface HallData {
+  hallName: string;
+  data: Transaction[];
+}
+
 const GuageChart = () => {
   const [currentValue, setCurrentValue] = useState(50);
   const [arcs, setArcs] = useState([{ limit: 30 }, { limit: 50 }, { limit: 100 }])
+  
+  function calculateTotalPaid(data: HallData[]): number {
+    let totalPaid = 0;
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrentValue(Math.random() * 100);
-      setArcs([{ limit: 30 }, { limit: 35 }, { limit: 100 }])
-    });
+    for (const hall of data) {
+        for (const transaction of hall.data) {
+            if (transaction.status === 'PENDING') {
+                totalPaid += transaction.amount;
+            }
+        }
+    }
 
-    return () => {
-      clearTimeout(timer);
-    };
-    
-  }, []);
-  const idia = myData.filter((hotel) => hotel.hallName === "Kuti Hall")
-  console.log(idia)
+    return totalPaid;
+}
+
+function valueToPercentage(value: number, target: number): number {
+  if (value === 0) {
+      throw new Error("Total cannot be zero.");
+  }
+
+  const percentage = (value / target) * 100;
+  return percentage;
+}
+
+const target = 1000000000;
+
+const totalPaidAmount = valueToPercentage(calculateTotalPaid(myData), target);
+console.log('Total Paid Amount:', totalPaidAmount);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setCurrentValue(totalPaidAmount);
+    setArcs([{ limit: 30 }, { limit: 35 }, { limit: 100 }])
+  });
+
+  return () => {
+    clearTimeout(timer);
+  };
+  
+}, []);
+
   // const kbitsToMbits = (value: number) => {
   //   if (value >= 1000) {
   //     value = value / 1000;
