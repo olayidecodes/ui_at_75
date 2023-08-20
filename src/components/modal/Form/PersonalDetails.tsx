@@ -6,6 +6,14 @@ import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation'
 
+
+
+
+interface Currency {
+  code: string;
+  name: string;
+}
+
 const PersonalDetails = (props: any) => {
   // initializing the state of all form input.
   const [state, setState] = useState({
@@ -14,16 +22,18 @@ const PersonalDetails = (props: any) => {
     Email: '', 
     HallAlumni: '', 
     AmountToPay: 0,
-    Narration: ''
+    Narration: '',
+    Currency: ''
   })
 
   const [ isLoading, setIsLoading ] = useState<boolean>(false)
   const router = useRouter()
 
+
   // onSubmit function
   const submitHandler = async () => {
     // form validation before the next form
-      if (state.FirstName && state.LastName && state.Email && (state.AmountToPay > 0) && state.HallAlumni && state.Narration !== "") {
+      if (state.FirstName && state.LastName && state.Email && (state.AmountToPay >= 100) && state.Currency && state.HallAlumni && state.Narration !== "") {
         const payload = {
           "firstName": state.FirstName,
           "lastName": state.LastName,
@@ -31,6 +41,7 @@ const PersonalDetails = (props: any) => {
           "amount": state.AmountToPay,
           "narration": state.Narration,
           "hallOfResidence": state.HallAlumni,
+          "currency": state.Currency,
           "transactionID": '',
         }
         setIsLoading(true);
@@ -59,6 +70,18 @@ const inputHandle = (e: any) => {
 }
 
 
+// list of currencies
+const currencies: Currency[] = [
+  { code: 'NGN', name: 'Nigerian Naira' }, 
+  { code: 'USD', name: 'US Dollar' },
+  { code: 'EUR', name: 'Euro' },
+  { code: 'GBP', name: 'British Pound Sterling' },
+  { code: 'JPY', name: 'Japanese Yen' },
+  { code: 'AUD', name: 'Australian Dollar' },
+  // Add more currencies as needed
+];
+
+
   return (
     <div className={style.main}>
       <ToastContainer />
@@ -82,17 +105,7 @@ const inputHandle = (e: any) => {
                   </div>
 
                   <div className={style.field}>
-                    <label className='label' htmlFor="amount">Amount (&#8358;)</label>
-                    <input value={state.AmountToPay} onChange={inputHandle} className={style.input} type='number' name='AmountToPay'/>
-                  </div>
-
-                  <div className={style.field}>
-                    <label className='label' htmlFor="narration">Narration</label>
-                    <textarea className={style.Narration} value={state.Narration} onChange={inputHandle} name="Narration" id="Narration" cols={30} placeholder='Type Here...' rows={10} />
-                  </div>
-
-                  <div className={style.field}>
-                    <label className='label' htmlFor="hallAllumni">Allumni Hall</label>
+                    <label className='label' htmlFor="hallAllumni">Alumni Hall</label>
                     <select className={style.select} onChange={inputHandle} name="HallAlumni" id="HallAlumni">
                       <option value="#">Select your Hall</option>
                       <option value="Alexander brown hall">Alexander Brown Hall</option>
@@ -107,6 +120,28 @@ const inputHandle = (e: any) => {
                       <option value="Nnamdi Azikwe Hall">Nnamdi Azikwe Hall</option>
                     </select>
                   </div> 
+
+                  <div className={style.field}>
+                    <label className='label' htmlFor="currency">Currency</label>
+                    <select className={style.select} name='Currency' onChange={inputHandle}>
+                      <option value="">Select A Currency</option>
+                      {currencies.map((currency) => (
+                        <option key={currency.code} value={currency.code}>
+                          {currency.name} - ({currency.code})
+                      </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className={style.field}>
+                    <label className='label' htmlFor="amount">Amount</label>
+                    <input value={state.AmountToPay} onChange={inputHandle} className={style.input} type='number' name='AmountToPay'/>
+                  </div>
+
+                  <div className={style.field}>
+                    <label className='label' htmlFor="narration">Narration</label>
+                    <textarea className={style.Narration} value={state.Narration} onChange={inputHandle} name="Narration" id="Narration" cols={30} placeholder='Type Here...' rows={10} />
+                  </div>
                 </div>
 
                 <button type='submit' className={style.btn} onClick={submitHandler} disabled={isLoading}>{ isLoading? "Processing..." : "Pay"}</button>

@@ -30,9 +30,9 @@ const Navbar = () => {
             <Link className={styles.link} href="/about">About Project</Link>
             <Link className={styles.link} href="/contact">Contact Us</Link>
             <Link onClick={openPopup} className={styles.link_other} href="">Donate</Link>
-            {isPopupOpen && <Popup onClose={closePopup}/>}
             
         </div>
+        {isPopupOpen && <Popup onClose={closePopup}/>}
         <AiOutlineMenu className={styles.menu} onClick={() => setToggle(!toggle)}/>
 
         {toggle && 
@@ -42,9 +42,9 @@ const Navbar = () => {
         <Link className={styles.link} href="/about">About Project</Link>
         <Link className={styles.link} href="/contact">Contact Us</Link>
         <Link onClick={openPopup} className={styles.link_other} href="">Donate</Link>
-        {isPopupOpen && <Popup onClose={closePopup}/>}
         
         </div>
+        {isPopupOpen && <Popup onClose={closePopup}/>}
     </div>
         }
     </nav>

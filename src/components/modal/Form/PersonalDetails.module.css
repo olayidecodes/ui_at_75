@@ -1,8 +1,31 @@
 .main{
     background: #fff;
     padding: 2rem;
+    max-width: 800px;
     height: 700px;
+    overflow-y: scroll;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ccc #f4f4f4; /* For Firefox */
 }
+
+  
+  .main::-webkit-scrollbar {
+    width: 20px; /* Width of the scrollbar */
+  }
+  
+  .main::-webkit-scrollbar-thumb {
+    box-shadow: inset 1px 1px 10px 1px rgba(0, 0, 0, 0.44);
+    background-color: #ccc; /* Color of the thumb */
+    border-radius: 20px; /* Rounded corners of the thumb */
+  }
+  
+  .main::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa; /* Color of the thumb on hover */
+  }
+  
+  .main::-webkit-scrollbar-track {
+    background-color: #f4f4f4; /* Color of the track */
+  }
 
 .form{
     display: flex;
@@ -34,7 +57,7 @@
 
 .input, .select{
     border: 2px solid black;
-    width: 100% !important;
+    max-width: 100% !important;
     padding: 1rem;
     background-color: transparent;
     border-radius: 0.3rem;
