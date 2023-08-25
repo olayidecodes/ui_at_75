@@ -27,9 +27,10 @@ const Navbar = () => {
     <nav className={styles.container}>
         <Image src="/logo.png" width={51} height={62} alt='University of Ibadan'/>
         <div className={styles.links}>
-            <Link className={styles.link} href="/about">About Project</Link>
+            {/* <Link className={styles.link} href="/about">About Project</Link>
             <Link className={styles.link} href="/contact">Contact Us</Link>
-            <Link onClick={openPopup} className={styles.link_other} href="">Donate</Link>
+            <Link onClick={openPopup} className={styles.link_other} href="">Donate</Link> */}
+            <Link className={styles.link_other} href="https://www.ui.edu.ng/">Homepage</Link>
             
         </div>
         {isPopupOpen && <Popup onClose={closePopup}/>}

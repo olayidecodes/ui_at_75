@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from './page.module.css'
 import Banner from '@/components/banner/Banner'
 import BarChart from '@/components/bar_chart/BarChart'
@@ -11,7 +10,7 @@ export default function Home() {
     <main className={styles.main}>
       <Banner />
       <section className={`${styles.section} ${styles.charts}`}>
-        <h1>Progress made so far</h1>
+        <h4>Progress made so far</h4>
         <BarChart />
         {/* <ProgressBar /> */}
         <GuageChart />

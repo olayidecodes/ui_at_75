@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 // import CONSTANTS from './lib/GaugeComponent/constants';
 import styles from './page.module.css'
 import myData from './test_data';
+import FundraisingThermometer from "../thermometer/FundraisingThermometer";
 
 interface Transaction {
   firstName: string;
@@ -50,7 +51,7 @@ function valueToPercentage(value: number, target: number): number {
   return percentage;
 }
 
-const target = 1000000000;
+const target = 10000000;
 
 const totalPaidAmount = valueToPercentage(calculateTotalPaid(myData), target);
 console.log('Total Paid Amount:', totalPaidAmount);
@@ -143,10 +144,11 @@ useEffect(() => {
           className={styles.guage}
         />
       </div>
+      <FundraisingThermometer current={currentValue} goal={target} />
       <div className={styles.text}>
-          <p>Total amount realized so far:</p>
-          <h3>₦162.5M</h3>
-        </div>
+        <p>Total amount realized so far:</p>
+        <h3>₦{currentValue}M</h3>
+      </div>
     </div>
   )
 }

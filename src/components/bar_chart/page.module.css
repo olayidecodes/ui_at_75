@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    border-radius: 45.818px;
+    /* border-radius: 45.818px; */
     background: linear-gradient(175deg, #435EEF 0%, rgba(178, 52, 255, 0.90) 100%);
     color: var(--color-white);
     text-align: center;
@@ -34,7 +34,7 @@
 .bar_chart .chart {
     width: 100%;
     background-color: var(--color-white);
-    border-radius: 30px;
+    /* border-radius: 30px; */
     padding: 1rem;
 }
 

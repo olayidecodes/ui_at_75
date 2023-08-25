@@ -1,0 +1,30 @@
+/* components/FundraisingThermometer.module.css
+.thermometer {
+    width: 100px;
+    height: 300px;
+    background-color: #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .progress {
+    background-color: #007bff;
+    transition: height 0.5s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .goalText {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+  }
+   */
+
+
+   .thermometer {
+    background-color: var(--light-blue);
+   }

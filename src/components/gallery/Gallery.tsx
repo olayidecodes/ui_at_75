@@ -6,15 +6,20 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const Gallery = () => {
 
   var settings = {
     dots: true,
-    infinite: false,
-    speed: 500,
+    speed: 6000,
     slidesToShow: 3,
     slidesToScroll: 2,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    infinite: true,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -43,7 +48,7 @@ const Gallery = () => {
     ]
   };
   
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState('');
 
   const images = [
     {
@@ -78,12 +83,12 @@ const Gallery = () => {
     },
   ]
 
-  const handleImageClick = (imageUrl) => {
+  const handleImageClick = (imageUrl: string) => {
     setSelectedImage(imageUrl);
   };
 
   const handleClosePopup = () => {
-    setSelectedImage(null);
+    setSelectedImage('');
   };
 
   return (
@@ -110,7 +115,11 @@ const Gallery = () => {
           <span className={styles.close_btn} onClick={handleClosePopup}>
             &times;
           </span>
-          <img src={selectedImage} alt="Selected" />
+          <Image 
+            src={selectedImage}
+            width={600}
+            height={400}
+            alt="Selected" />
         </div>
       )}
     </div>
